@@ -11,9 +11,8 @@ st.title("Previsor de Números da Roleta via Imagem")
 uploaded_file = st.file_uploader("Envie uma imagem JPEG com os números:", type=["jpg", "jpeg"])
 
 def process_image(image):
-    # Converte para escala de cinza e aplica binarização
     image = ImageOps.grayscale(image)
-    image = ImageOps.invert(image)  # ajuda o OCR a reconhecer melhor em algumas imagens
+    image = ImageOps.invert(image)
     return image
 
 def extract_numbers(text):
